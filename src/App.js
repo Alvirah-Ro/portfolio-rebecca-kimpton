@@ -1,29 +1,19 @@
 import logo from './logo.svg';
 import './App.css';
-import EnterWords from './EnterWords.js'
+import './Styles.css';
+import Nav from './Nav.js';
+import Intro from './Intro.js';
+import About from './About.js';
+import Education from './Education.js';
+import Projects from './Projects.js';
+
 
 function App() {
   return (
-    <div>
-      <EnterWords />
-    </div>
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1>Hello from React on OpenShift!</h1>
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      < Nav />
+      < Intro />
+    </>
   );
 }
 

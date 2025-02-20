@@ -1,0 +1,33 @@
+nav {
+    color: rebeccapurple;
+}
+
+body {
+    background-color: lavender;
+}
+
+#top {
+    padding: 30px;
+}
+
+#intro {
+    background-color: rebeccapurple;
+    color: white;
+    padding: 20px;
+}
+
+img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    padding: 20px 0;
+}
+
+#about {
+    background-color: rebeccapurple;
+    color: white;
+    padding: 20px;
+}
