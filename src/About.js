@@ -2,7 +2,7 @@ export default function About() {
     return (
         <div className="container">
             <div className="row" id="about">
-                <div className="col" style="margin: 50px 0">
+                <div className="col">
                     <h3 className="text-center">About Me</h3>
                     <p>
                         I have a background in music, performing the oboe and English horn for several years with the

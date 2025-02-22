@@ -1,15 +1,15 @@
 import Schuyler from './Schuyler.jpeg';
 
-export default function Intro() {
+export default function Home() {
     return (
         <div className="container">
         <div className="row">
             <div className="col" id="top">
-                <h1>Cats are cool</h1>
+                <h1></h1>
             </div>
         </div>
         <div className="row">
-            <div className="col-8" id="intro">
+            <div className="col-8" id="home">
                 <h2>
                     <p>Hi, I'm Rebecca</p>
                     <p>and I'm excited to begin</p>
@@ -17,9 +17,6 @@ export default function Intro() {
                     <p>as a</p>
                     <p>Web Developer!</p>
                 </h2>
-            </div>
-            <div className="col">
-                <img src={Schuyler} alt="profile picture"/>
             </div>
         </div>
     </div>

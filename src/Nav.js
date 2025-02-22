@@ -27,7 +27,7 @@
 // }
 
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import Intro from './Intro';
+import Home from './Home';
 import Projects from './Projects';
 import About from './About';
 import Education from './Education';
@@ -39,33 +39,23 @@ export default function Nav() {
             <nav className="navbar navbar-expand-lg bg-body-tertiary bg-dark border-bottom border-body" data-bs-theme="dark"
                 id="navbar">
                 <div className="container">
-                    <a className="navbar-brand" href="#">Rebecca Kimpton</a>
+                    <p className="navbar-brand">Rebecca Kimpton</p>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
                         aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
                         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                             <div className="navbar-nav">
-                                <ul>
-                                    <li>
-                                        <Link className="nav-link" to="/">home</Link>
-                                    </li>
-                                    <li>
-                                        <Link  className="nav-link" to="/projects">Projects</Link>
-                                    </li>
-                                    <li>
-                                        <Link  className="nav-link" to="/about">About Me</Link>
-                                    </li>
-                                    <li>
-                                        <Link  className="nav-link" to="/education">Education</Link>
-                                    </li>
-                                </ul>
+                                <Link className="nav-link" to="/">Home</Link>
+                                <Link  className="nav-link" to="/projects">Projects</Link>
+                                <Link  className="nav-link" to="/about">About Me</Link>
+                                <Link  className="nav-link" to="/education">Education</Link>
                             </div>
                         </div>
                 </div>
             </nav>
             <Routes>
-                <Route exact path="/" element={<Intro />} />
+                <Route exact path="/" element={<Home />} />
                 <Route path="/projects" element={<Projects />} />
                 <Route path="/About" element={<About />} />
                 <Route path="/Education" element={<Education />} />

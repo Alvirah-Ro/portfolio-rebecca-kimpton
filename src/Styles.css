@@ -7,10 +7,10 @@ body {
 }
 
 #top {
-    padding: 30px;
+    height: 200px;
 }
 
-#intro {
+#home {
     background-color: rebeccapurple;
     color: white;
     padding: 20px;
