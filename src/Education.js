@@ -2,7 +2,7 @@ export default function Education() {
     return (
         <div className="container">
             <div className="row">
-                <div className="col">
+                <div className="col my-5">
                     <h1>EDUCATION & CERTIFICATIONS</h1>
                     <div>
                         <h3>IBM Full Stack Software Developer Professional Certificate - Completed January 2025</h3>

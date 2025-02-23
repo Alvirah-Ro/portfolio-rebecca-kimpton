@@ -1,8 +1,8 @@
 export default function About() {
     return (
         <div className="container">
-            <div className="row" id="about">
-                <div className="col">
+            <div className="row m-5" id="about">
+                <div className="col p-3">
                     <h3 className="text-center">About Me</h3>
                     <p>
                         I have a background in music, performing the oboe and English horn for several years with the

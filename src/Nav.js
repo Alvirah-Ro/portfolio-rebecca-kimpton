@@ -39,7 +39,7 @@ export default function Nav() {
             <nav className="navbar navbar-expand-lg bg-body-tertiary bg-dark border-bottom border-body" data-bs-theme="dark"
                 id="navbar">
                 <div className="container">
-                    <p className="navbar-brand">Rebecca Kimpton</p>
+                    <a className="navbar-brand">Rebecca Kimpton</a>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
                         aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
