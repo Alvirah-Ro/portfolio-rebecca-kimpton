@@ -1,6 +1,6 @@
 export default function Education() {
     return (
-        <div className="container">
+        <div className="container" id="education">
             <div className="row">
                 <div className="col my-5">
                     <h1>EDUCATION & CERTIFICATIONS</h1>

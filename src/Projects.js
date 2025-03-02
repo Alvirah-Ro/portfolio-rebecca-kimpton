@@ -4,17 +4,17 @@ import PollsHomePage from './PollsHomePage.jpg';
 
 export default function Projects() {
     return (
-        <div className="container">
+        <div style={{ backgroundColor: '#EEEEEE' }}>
+            <div className="container">
             {/* <div className="grid gap-3"> */}
-                <div className="row column-gap-3 mt-5">
-                    <div className="col p-3">
-                        <div className="border border-dark text-center p-3">
-                            <h4>Polls App</h4>
+                <div className="row column">
+                        <div className="border border-dark shadow text-center my-5 py-5" id="project">
+                            <h1>Polls App</h1>
                             <p>Polls is a Django app that allows users to view and vote on various fun questions.</p>
-                            <img className="object-fit-contain mt-n5" src={PollsHomePage} alt="Home Page of Polls App" />
+                            <img className="object-fit-contain shadow-sm mt-n5" src={PollsHomePage} alt="Home Page of Polls App" />
                         </div>
-                    </div>
                 </div>
+            </div>
                 <div className="row column-gap-3 mt-5">
                     <div className="col p-3" style={{ backgroundColor: '#fc6c85' }}>
                         <img className="img-fluid" src={Schuyler} alt="project photo" />
