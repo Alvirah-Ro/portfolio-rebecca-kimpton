@@ -1,20 +1,20 @@
 import Schuyler from './Schuyler.jpeg';
-import Polls_HomePage from './Polls_HomePage.jpeg';
 import PollsHomePage from './PollsHomePage.jpg';
+import Polls from './Polls';
+
 
 export default function Projects() {
     return (
         <div style={{ backgroundColor: '#EEEEEE' }}>
-            <div className="container">
-            {/* <div className="grid gap-3"> */}
-                <div className="row column">
+                <div className="container">
+                    <div className="row column">
                         <div className="border border-dark shadow text-center my-5 py-5" id="project">
                             <h1>Polls App</h1>
                             <p>Polls is a Django app that allows users to view and vote on various fun questions.</p>
                             <img className="object-fit-contain shadow-sm mt-n5" src={PollsHomePage} alt="Home Page of Polls App" />
                         </div>
+                    </div>
                 </div>
-            </div>
                 <div className="row column-gap-3 mt-5">
                     <div className="col p-3" style={{ backgroundColor: '#fc6c85' }}>
                         <img className="img-fluid" src={Schuyler} alt="project photo" />
@@ -33,9 +33,9 @@ export default function Projects() {
                         <h4>Project Name</h4>
                         <p>Project brief description</p>
                     </div>
-                {/* </div> */}
-            </div>    
-            <h5>Git Hub link:</h5><a href="https://github.com/Alvirah-Ro">https://github.com/Alvirah-Ro</a>
-        </div>
+                    {/* </div> */}
+                </div>
+                <h5>Git Hub link:</h5><a href="https://github.com/Alvirah-Ro">https://github.com/Alvirah-Ro</a>
+        </div >
     )
 }
