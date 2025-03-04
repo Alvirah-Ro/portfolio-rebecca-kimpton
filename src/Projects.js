@@ -1,41 +1,30 @@
-import Schuyler from './Schuyler.jpeg';
-import PollsHomePage from './PollsHomePage.jpg';
-import Polls from './Polls';
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
+function Projects() {
+    const [projects, setProjects] = useState([]);
 
-export default function Projects() {
+    useEffect(() => {
+        //  Fetch all public repositories from Git Hub
+        fetch("https://api.github.com/users/Alvirah-Ro/repos")
+        .then(response => response.json())
+        .then(data => setProjects(data))
+        .catch(error => console.error("Error fetching projects:", error));
+    }, []);
+
     return (
-        <div style={{ backgroundColor: '#EEEEEE' }}>
-                <div className="container">
-                    <div className="row column">
-                        <div className="border border-dark shadow text-center my-5 py-5" id="project">
-                            <h1>Polls App</h1>
-                            <p>Polls is a Django app that allows users to view and vote on various fun questions.</p>
-                            <img className="object-fit-contain shadow-sm mt-n5" src={PollsHomePage} alt="Home Page of Polls App" />
-                        </div>
-                    </div>
-                </div>
-                <div className="row column-gap-3 mt-5">
-                    <div className="col p-3" style={{ backgroundColor: '#fc6c85' }}>
-                        <img className="img-fluid" src={Schuyler} alt="project photo" />
-                        <h4>Project Name</h4>
-                        <p>Project brief description</p>
-                    </div>
-                </div>
-                <div className="row column-gap-3 mt-3 mb-5">
-                    <div className="col p-3" style={{ backgroundColor: '#ffd1dc' }}>
-                        <img className="img-fluid" src={Schuyler} alt="project photo" />
-                        <h4>Project Name</h4>
-                        <p>Project brief description</p>
-                    </div>
-                    <div className="col p-3" style={{ backgroundColor: '#e75480' }}>
-                        <img className="img-fluid" src={Schuyler} alt="project photo" />
-                        <h4>Project Name</h4>
-                        <p>Project brief description</p>
-                    </div>
-                    {/* </div> */}
-                </div>
-                <h5>Git Hub link:</h5><a href="https://github.com/Alvirah-Ro">https://github.com/Alvirah-Ro</a>
-        </div >
-    )
+        // Returns each repository as a link that navigates to a detailed project page
+        <div>
+            <h1>Projects</h1>
+            <ul>
+                {projects.map((project) => (
+                    <li key={project.id}>
+                        <Link to={`/projects/${project.name}`}>{project.name}</Link>
+                    </li>
+                ))}
+            </ul>
+        </div>
+    );
 }
+
+export default Projects;

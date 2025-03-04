@@ -9,7 +9,7 @@ import { Routes, Route } from 'react-router-dom';
 function App() {
   return (
     <>
-      <Nav/>
+      <Nav />
       <Routes>
         {routes.map(({ path, element}, index) => (
           <Route key={index} path={path} element={element} />
