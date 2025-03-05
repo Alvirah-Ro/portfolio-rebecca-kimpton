@@ -6,7 +6,7 @@ function Projects() {
 
     useEffect(() => {
         //  Fetch all public repositories from Git Hub
-        fetch("https://api.github.com/users/Alvirah-Ro/repos")
+        fetch("https://api.github.com/users/Alvirah-Ro/starred")
         .then(response => response.json())
         .then(data => setProjects(data))
         .catch(error => console.error("Error fetching projects:", error));
