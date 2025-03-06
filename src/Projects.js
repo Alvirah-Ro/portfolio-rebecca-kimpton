@@ -48,23 +48,30 @@ function Projects() {
 
     return (
         // Returns each repository as a link that navigates to a detailed project page
-        <div>
-            <div className="container text-center py-5">
-                <h1>PROJECTS</h1>
+        <div className="container text-center py-5">
+            <h1>PROJECTS</h1>
+            <div className="accordion">
                 <ul className="list-unstyled">
                     {projects.map((project) => (
-                        <div className="border border-dark shadow text-center my-5 py-5" id="project">
+                        <div className="accordion-item border border-dark shadow text-center my-5 py-5" id="project">
                         <li key={project.id}>
                             <Link to={`/projects/${project.name}`}>
-                                <h3>{project.title || project.name}</h3>
+                                <h3 className="accordion-header">
+                                    <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                        {project.title || project.name}
+                                    </button>
+                                </h3>
                             </Link>
-                            <p>{project.description}</p>
-                            {project.image && <img src={project.image} alt={project.title} width="200" />}
+                            <div id="flush-collapseOne" className="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                                <div className="accordion-body">
+                                    <p>{project.description}</p>
+                                    {project.image && <img src={project.image} alt={project.title} width="200" />}
+                                </div>
+                            </div>
                         </li>
                         </div>
                     ))}
-            </ul>
-            
+                </ul>
             </div>
         </div>
     );
