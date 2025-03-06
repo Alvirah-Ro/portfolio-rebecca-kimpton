@@ -14,17 +14,25 @@ function Projects() {
                 // Step 2: Fetch `project.json` from each repo
                 const projectWithDetails = await Promise.all(
                     repos.map(async (repo) => {
-                        const jsonUrl = `https://raw.githubusercontent.com/Alvirah-Ro/${repo.name}/main/project.json`;
-                        try {
-                            const jsonResponse = await fetch(jsonUrl);
-                            if (!jsonResponse.ok) throw new Error("project.json not found");
+                        const jsonUrls = [
+                            `https://raw.githubusercontent.com/Alvirah-Ro/${repo.name}/main/project.json`,  // Root directory
+                            `https://raw.githubusercontent.com/Alvirah-Ro/${repo.name}/main/${repo.name}/project.json`, // Inside a subdirectory
+                        ];
 
-                            const projectData = await jsonResponse.json();
-                            return { ...repo, ...projectData }; // Merge repo and project.json data
-                        } catch (error) {
-                            console.warn(`Skipping ${repo.name}:`, error);
-                            return null; // Skip repos without project.json
+                        for (const url of jsonUrls) {
+                            try {
+                                const jsonResponse = await fetch(url);
+                                if (jsonResponse.ok) {
+                                    const projectData = await jsonResponse.json();
+                                    return { ...repo, ...projectData }; // Merge repo and project.json data
+                                }
+                            } catch (error) {
+                                console.warn(`Failed to fetch from ${url}:`, error);
+                            }
                         }
+                        
+                        console.warn(`Skipping ${repo.name}: project.json not found in both locations`);
+                        return null; // Skip repos without project.json
                     })
                 );
 
@@ -41,18 +49,23 @@ function Projects() {
     return (
         // Returns each repository as a link that navigates to a detailed project page
         <div>
-            <h1>Projects</h1>
-            <ul>
-                {projects.map((project) => (
-                    <li key={project.id}>
-                        <Link to={`/projects/${project.name}`}>
-                            <h3>{project.title || project.name}</h3>
-                        </Link>
-                        <p>{project.description}</p>
-                        {project.image && <img src={project.image} alt={project.title} width="200" />}
-                    </li>
-                ))}
+            <div className="container text-center py-5">
+                <h1>PROJECTS</h1>
+                <ul className="list-unstyled">
+                    {projects.map((project) => (
+                        <div className="border border-dark shadow text-center my-5 py-5" id="project">
+                        <li key={project.id}>
+                            <Link to={`/projects/${project.name}`}>
+                                <h3>{project.title || project.name}</h3>
+                            </Link>
+                            <p>{project.description}</p>
+                            {project.image && <img src={project.image} alt={project.title} width="200" />}
+                        </li>
+                        </div>
+                    ))}
             </ul>
+            
+            </div>
         </div>
     );
 }
