@@ -48,19 +48,24 @@ function Projects() {
 
     return (
         // Returns each repository as a link that navigates to a detailed project page
-        <div className="container text-center py-5">
-            <h1>PROJECTS</h1>
+        <div id="projects">
+        <div className="container py-5 m-0">
+            <h1 className="ms-5 mb-3">PROJECTS</h1>
             <div className="accordion" id="accordionFlushExample">
                 <ul className="list-unstyled">
                     {projects.map((project, index) => {
                         const collapseId = `flush-collapse-${index}`;
                         return (
-                            <li key={project.id} className="my-4">
-                                <div className="accordion-item border border-dark shadow text-center my-5 py-5" key={project.id}>
-                                    <Link to={`/projects/${project.name}`}>
-                                        <h3 id="title">{project.title || project.name}</h3>
-                                    </Link>
-                                    {project.image && <img src={project.image} alt={project.title} width="50%" />}
+                            <li key={project.id} className="d-flex justify-content-start ms-5">
+                                <div className="accordion-item border border-dark shadow my-3 py-1 w-75" id="projects-line" key={project.id}>
+                                    <div className="row mx-5">
+                                        <div className="d-flex align-items-center justify-content-start">
+                                            <Link to={`/projects/${project.name}`}>
+                                                <h2 id="title" className="me-5">{project.title || project.name} :</h2>
+                                            </Link>                                   
+                                            {project.image && <img src={project.image} alt={project.title} className="img-thumbnail my-3" width="200px" />}
+                                        </div>
+                                    </div>
                                     <h3 className="accordion-header">
                                         <button
                                             className = "accordion-button collapsed"
@@ -85,6 +90,7 @@ function Projects() {
                     })}
                 </ul>
             </div>
+        </div>
         </div>
     );
 }

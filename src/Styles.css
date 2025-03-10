@@ -12,7 +12,13 @@ body {
 
 #home {
     background-color: rebeccapurple;
-    color: white;
+    color: lavender;
+}
+
+#gradient {
+    background: linear-gradient(45deg, rgba(102,51,153,1) 0%, rgba(123,155,182,1) 20%, rgba(155,182,123,1) 40%, rgba(182,150,123,1) 50%, rgba(155,182,123,1) 60%, rgba(123,155,182,1) 80%, rgba(102,51,153,1) 100%);
+    width: auto;
+    height: 300px;
 }
 
 img {
@@ -29,6 +35,15 @@ img {
     background-color: rebeccapurple;
     color: white;
     padding: 20px;
+}
+
+#projects {
+    background-color: rebeccapurple;
+    color: lavender;
+}
+
+#projects-line {
+    background-color: lavender;
 }
 
 #project {
