@@ -4,11 +4,17 @@ import { Link } from "react-router-dom";
 function Projects() {
     const [projects, setProjects] = useState([]);
 
-    useEffect(() => {
         async function fetchStarredRepos() {
             try {
                 //  Step 1: Fetch all starred repositories from Git Hub dynamically
-                const response = await fetch("https://api.github.com/users/Alvirah-Ro/starred");
+                const token = process.env.REACT_APP_GITHUB_TOKEN;
+                const response = await fetch("https://api.github.com/users/Alvirah-Ro/starred", {
+                    headers: {
+                        Authorization: `token ${token}`,
+                        Accept: "application/vnd.github.v3+json"
+                    }
+                });
+
                 const repos = await response.json();
 
                 console.log("Fetched repositories:", repos); // Debugging
@@ -33,6 +39,7 @@ function Projects() {
                                     return { 
                                         ...repoDetails, // GitHub metadata
                                         ...projectData, // Project.json data
+                                        updated_at: repo.updated_at // Ensure pushed_at is included
                                     }; // Merge repo and project.json data
                                 }
                             } catch (error) {
@@ -45,15 +52,19 @@ function Projects() {
                     }) // <-- Closing `.map()`
                 ); // <-- Closing `Promise.all()`
 
-            // Step 3: Filter out any null results
-            setProjects(projectWithDetails.filter(Boolean));
+            // Step 3: Filter out any null results            
+            const filteredProjects = projectWithDetails.filter(Boolean);
+            console.log("Final Projects State:", filteredProjects); // Logs what will be stored in `projects`
+            setProjects(filteredProjects);
             } catch (error) {
                 console.error("Error fetching starred repos:", error);
             }
-        }
+        };
 
-        fetchStarredRepos();
-    }, []);
+        // ✅ Fetch starred repos once when the component mounts
+        useEffect(() => {
+            fetchStarredRepos();
+        }, []); 
 
     return (
         // Returns each repository as a link that navigates to a detailed project page
@@ -62,9 +73,10 @@ function Projects() {
                 <h1 className="ms-5 mb-3">PROJECTS</h1>
                 <ul className="list-unstyled">
                     {projects.map((project) => {
+                        console.log(`Rendering Project: ${project.name}, Updated At: ${project.updated_at}`); // Logs project updating details to console
                         return (
                             <li key={project.id} className="d-flex justify-content-start ms-5">
-                                <div className="border border-dark shadow my-3 py-1 w-75" id="projects-line">
+                                <div className="border border-dark shadow my-3 py-1" id="projects-line">
                                     <div className="row mx-5">
                                         <div className="d-flex align-items-center justify-content-start">
                                             <Link to={`/projects/${project.name}`}>
@@ -76,8 +88,10 @@ function Projects() {
                                                 className="img-thumbnail my-3" 
                                                 width="200px" />
                                             )}
-                                            {project.pushed_at && (
-                                                <p>Last Updated: {new Date(project.pushed_at).toLocaleDateString()}</p>
+                                            {project.updated_at ? (
+                                                <p>Last Updated: {new Date(project.updated_at).toLocaleDateString()}</p>
+                                            ) : (
+                                                <p style={{ color: "red" }}>No updated_at found</p>
                                             )}
                                         </div>
                                     </div>
