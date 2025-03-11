@@ -76,7 +76,7 @@ function Projects() {
                         console.log(`Rendering Project: ${project.name}, Updated At: ${project.updated_at}`); // Logs project updating details to console
                         return (
                             <li key={project.id} className="d-flex justify-content-start ms-5">
-                                <div className="border border-dark shadow my-3 py-1" id="projects-line">
+                                <div className="border border-dark shadow my-3 py-1 w-75" id="projects-line">
                                     <div className="row mx-5">
                                         <div className="d-flex align-items-center justify-content-start">
                                             <Link to={`/projects/${project.name}`}>
