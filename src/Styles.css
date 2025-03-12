@@ -53,9 +53,12 @@ img {
     padding: 20px;
 }
 
+#projects-title {
+    color: rebeccapurple;
+}
+
 #projects {
-    background-color: rebeccapurple;
-    color: lavender;
+    color: rebeccapurple;
 }
 
 #projects-line {
