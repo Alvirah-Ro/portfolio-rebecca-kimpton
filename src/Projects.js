@@ -10,7 +10,7 @@ function Projects() {
                 const token = process.env.REACT_APP_GITHUB_TOKEN;
                 const response = await fetch("https://api.github.com/users/Alvirah-Ro/starred", {
                     headers: {
-                        Authorization: `token ${token}`,
+                        Authorization: `Bearer ${token}`,
                         Accept: "application/vnd.github.v3+json"
                     }
                 });
