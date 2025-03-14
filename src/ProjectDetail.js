@@ -62,7 +62,23 @@ function ProjectDetail() {
     const imageUrl2 = projectDetails?.image2
         ? `${process.env.PUBLIC_URL}/images/${projectDetails.image2}`
         : `${process.env.PUBLIC_URL}/images/default.jpg`; // Optional fallback image
-    
+
+    const imageUrl3 = projectDetails?.image2
+        ? `${process.env.PUBLIC_URL}/images/${projectDetails.image3}`
+        : `${process.env.PUBLIC_URL}/images/default.jpg`; // Optional fallback image
+
+    const imageUrl4 = projectDetails?.image2
+        ? `${process.env.PUBLIC_URL}/images/${projectDetails.image4}`
+        : `${process.env.PUBLIC_URL}/images/default.jpg`; // Optional fallback image
+
+    const imageUrl5 = projectDetails?.image2
+        ? `${process.env.PUBLIC_URL}/images/${projectDetails.image5}`
+        : `${process.env.PUBLIC_URL}/images/default.jpg`; // Optional fallback image
+
+    const imageUrl6 = projectDetails?.image2
+        ? `${process.env.PUBLIC_URL}/images/${projectDetails.image6}`
+        : `${process.env.PUBLIC_URL}/images/default.jpg`; // Optional fallback image
+
 
     return (
         <div>
@@ -72,22 +88,16 @@ function ProjectDetail() {
             {/* Display images from project.json if available */}
             {projectDetails && (
                 <>
-                    <img 
-                        src={imageUrl} 
-                        alt="Project Image 1"
-                            className="img my-3"
-                            width="600px" 
-                    />
-                    <img 
-                        src={imageUrl2}
-                        alt="Project Image"
-                        className="img my-3"
-                        width="600px"
-                    />
+                    <img src={imageUrl} alt="Project Image 1 " className="img my-3" width="600px" />
+                    <img src={imageUrl2} alt="Project Image 2" className="img my-3" width="600px" />
+                    <img src={imageUrl3} alt="Project Image 3" className="img my-3" width="600px" />
+                    <img src={imageUrl4} alt="Project Image 4" className="img my-3" width="600px" />
+                    <img src={imageUrl5} alt="Project Image 5" className="img my-3" width="600px" />
+                    <img src={imageUrl6} alt="Project Image 6" className="img my-3" width="600px" />
                 </>
             )}
 
-            <a href={project.html_url} target="blank" rel="noopener noreferrer">View on GitHub</a>
+            <a href={project?.html_url} target="_blank" rel="noopener noreferrer">View on GitHub</a>
         </div>
     );
 }

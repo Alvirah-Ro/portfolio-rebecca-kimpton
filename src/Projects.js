@@ -66,6 +66,7 @@ function Projects() {
             fetchStarredRepos();
         }, []); 
 
+
     return (
         // Returns each repository as a link that navigates to a detailed project page
         <div id="projects">
@@ -73,6 +74,10 @@ function Projects() {
                 <h1 className="text-center p-3 m-3" id="projects-title">PROJECTS</h1>
                 <ul className="list-unstyled">
                     {projects.map((project) => {
+                        const imageUrl = project.image
+                            ? `${process.env.PUBLIC_URL}/images/${project.image}`
+                            : `${process.env.PUBLIC_URL}/images/default.jpg`; // Optional fallback image
+                    
                         console.log(`Rendering Project: ${project.name}, Updated At: ${project.updated_at}`); // Logs project updating details to console
                         return (
                             <li key={project.id} className="d-flex justify-content-center">
@@ -82,12 +87,7 @@ function Projects() {
                                             <Link to={`/projects/${project.name}`}>
                                                 <h5 id="title" className="p-4">{project.title || project.name}</h5>                                
                                             </Link>   
-                                            {project.image && (
-                                                <img src={project.image} 
-                                                alt={project.title} 
-                                                className="img-thumbnail my-3" 
-                                                width="150px" />
-                                            )}
+                                            <img src={imageUrl} alt={project.title} className="img-thumbnail my-3" width="150px" />
                                         </div>
                                         <div className="m-3">
                                             <p>{project.description || "No description available."}</p>
