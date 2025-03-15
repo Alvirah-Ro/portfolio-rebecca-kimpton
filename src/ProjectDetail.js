@@ -83,7 +83,9 @@ function ProjectDetail() {
     return (
         <div>
             <h1>{projectDetails?.title}</h1>
-            <p>{projectDetails?.longDescription || project.description || "No description available."}</p>
+            <p>{projectDetails?.longDescription1 || project.description || "No description available."}</p>
+            <p>{projectDetails?.longDescription2 || project.description || "No description available."}</p>
+            <p>{projectDetails?.longDescription3 || project.description || "No description available."}</p>            
             <p>Last Updated: {new Date(project.updated_at).toLocaleDateString()}</p>
             {/* Display images from project.json if available */}
             {projectDetails && (
