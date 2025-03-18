@@ -84,8 +84,8 @@ function Projects() {
                                 <div className="border border-dark shadow my-3 py-1 w-75" id="projects-line">
                                     <div className="row">
                                         <div className="d-flex align-items-center justify-content-center">
-                                            <Link to={`/projects/${project.name}`}>
-                                                <h5 id="title" className="p-4">{project.title || project.name}</h5>                                
+                                            <Link id="title" to={`/projects/${project.name}`}>
+                                                <h5 className="p-4">{project.title || project.name}</h5>                                
                                             </Link>   
                                             <img src={imageUrl} alt={project.title} className="img-thumbnail my-3" width="150px" />
                                         </div>

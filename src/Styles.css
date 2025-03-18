@@ -38,7 +38,6 @@ body {
 }
 
 img {
-    margin: 30px 0;
     border-style: solid;
     border-color: black;
 }
@@ -74,15 +73,20 @@ img {
 
 }
 
-a {
-    text-decoration: none;
+#title a {
+    text-decoration: none !important;
 }
 
-a:hover {
-    text-decoration: underline;
+#title a:hover {
+    text-decoration: underline !important;
     text-decoration-color: rebeccapurple;
 }
 
 #title {
     color: rebeccapurple;
+}
+
+.max-width-500 {
+    max-width: 500px;
+    width: 100%; /* Keeps it responsive*/
 }
