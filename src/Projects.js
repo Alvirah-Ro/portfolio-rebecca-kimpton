@@ -70,9 +70,9 @@ function Projects() {
     return (
         // Returns each repository as a link that navigates to a detailed project page
         <div id="projects">
-            <div className="container-fluid">
+            <div className="container">
                 <h1 className="text-center p-3 m-3" id="projects-title">PROJECTS</h1>
-                <ul className="list-unstyled">
+                <ul className="list-unstyled d-flex flex-wrap justify-content-center gap-3">
                     {projects.map((project) => {
                         const imageUrl = project.image
                             ? `${process.env.PUBLIC_URL}/images/${project.image}`
@@ -80,23 +80,19 @@ function Projects() {
                     
                         console.log(`Rendering Project: ${project.name}, Updated At: ${project.updated_at}`); // Logs project updating details to console
                         return (
-                            <li key={project.id} className="d-flex justify-content-center">
-                                <div className="border border-dark shadow my-3 py-1 w-75" id="projects-line">
-                                    <div className="row">
-                                        <div className="d-flex align-items-center justify-content-center">
-                                            <Link id="title" to={`/projects/${project.name}`}>
-                                                <h5 className="p-4">{project.title || project.name}</h5>                                
-                                            </Link>   
-                                            <img src={imageUrl} alt={project.title} className="img-thumbnail my-3" width="150px" />
-                                        </div>
-                                        <div className="m-3">
-                                            <p>{project.description || "No description available."}</p>
-                                            {project.updated_at ? (
-                                                <p className="text-center">Last Updated: {new Date(project.updated_at).toLocaleDateString()}</p>
-                                            ) : (
-                                                <p style={{ color: "red" }}>No updated_at found</p>
-                                            )}
-                                        </div>
+                            <li key={project.id} className="border border-dark shadow p-3 max-width-300">
+                                <div className="d-flex flex-column align-items-center text-center">
+                                    <Link id="title" to={`/projects/${project.name}`}>
+                                        <h5 className="p-2" id="title">{project.title || project.name}</h5>                                
+                                    </Link>   
+                                    <img src={imageUrl} alt={project.title} className="img-thumbnail my-3" width="150px" />
+                                    <div className="m-2">
+                                        <p>{project.description || "No description available."}</p>
+                                        {project.updated_at ? (
+                                            <p>Last Updated: {new Date(project.updated_at).toLocaleDateString()}</p>
+                                        ) : (
+                                            <p style={{ color: "red" }}>No updated_at found</p>
+                                        )}
                                     </div>
                                 </div>
                             </li>

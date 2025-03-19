@@ -86,12 +86,12 @@ function ProjectDetail() {
             {/* Display images from project.json if available */}
             {projectDetails && (
                 <>
-                    <img src={imageUrl} alt="Project Image 1 " className="img-fluid max-width-500" width="500px" />
+                    <img src={imageUrl} alt="Project Image 1 " className="img-fluid max-width-700" width="500px" />
                 </>
             )}
             </div>
             <h1 className="mb-5 text-center">{projectDetails?.title}</h1>
-            <div className="grid">
+            <div className="grid border border-dark shadow p-3">
                 <div className="row pt-3">
                 <div className="col">
                 <p className="mb-4">{projectDetails?.longDescription1 || project.description || "No description available."}</p>

@@ -60,10 +60,6 @@ img {
     color: rebeccapurple;
 }
 
-#projects-line {
-    background-color: lavender;
-}
-
 #project {
     background-color: white;
 }
@@ -73,11 +69,11 @@ img {
 
 }
 
-#title a {
+a {
     text-decoration: none !important;
 }
 
-#title a:hover {
+a:hover {
     text-decoration: underline !important;
     text-decoration-color: rebeccapurple;
 }
@@ -86,7 +82,17 @@ img {
     color: rebeccapurple;
 }
 
+.max-width-300 {
+    max-width: 300px;
+    width: 100%;
+}
+
 .max-width-500 {
     max-width: 500px;
     width: 100%; /* Keeps it responsive*/
+}
+
+.max-width-700 {
+    max-width: 700px;
+    width: 100%;
 }
