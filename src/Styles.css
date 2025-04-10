@@ -1,3 +1,15 @@
+.lavender {
+    color: lavender
+}
+
+.rebecca {
+    color: rebeccapurple;
+}
+
+.rebeccaBackground {
+    background-color: rebeccapurple;
+}
+
 nav {
     color: rebeccapurple;
 }
@@ -8,27 +20,6 @@ body {
 
 #top {
     height: 200px;
-}
-
-#home {
-    background-color: rebeccapurple;
-    color: lavender;
-}
-
-#email {
-    background: rgb(165, 165, 239);
-    color: black;
-    border-radius: 8%;
-}
-
-#linkedin {
-    background-color: rgb(165, 165, 239);
-    color: black;
-    border-radius: 8%;
-}
-
-#linkedin a {
-    color: black;
 }
 
 #gradient {
@@ -42,16 +33,6 @@ img {
     border-color: black;
 }
 
-#education h1, #education h3, #education h5 {
-    padding: 0 0 20px 0;
-}
-
-#about {
-    background-color: rebeccapurple;
-    color: white;
-    padding: 20px;
-}
-
 #projects-title {
     color: rebeccapurple;
 }
@@ -60,18 +41,6 @@ img {
     color: rebeccapurple;
 }
 
-#project {
-    background-color: white;
-}
-
-#project h1 {
-    padding: 0 0 20px 0;
-
-}
-
-a {
-    text-decoration: none !important;
-}
 
 a:hover {
     text-decoration: underline !important;
@@ -95,4 +64,8 @@ a:hover {
 .max-width-700 {
     max-width: 700px;
     width: 100%;
+}
+
+.min-height-400 {
+    min-height: 400px;
 }
