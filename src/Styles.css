@@ -2,6 +2,10 @@
     color: lavender
 }
 
+.lavenderBackground {
+    background-color: lavender;
+}
+
 .rebecca {
     color: rebeccapurple;
 }
@@ -10,8 +14,8 @@
     background-color: rebeccapurple;
 }
 
-nav {
-    color: rebeccapurple;
+.white {
+    color: white;
 }
 
 body {
@@ -32,15 +36,6 @@ img {
     border-style: solid;
     border-color: black;
 }
-
-#projects-title {
-    color: rebeccapurple;
-}
-
-#projects {
-    color: rebeccapurple;
-}
-
 
 a:hover {
     text-decoration: underline !important;

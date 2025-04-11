@@ -1,10 +1,10 @@
 export default function Education() {
     return (
-        <div className="container m-5 lavender rebeccaBackground">
-            <div className="row mx-5 p-3">
-                <h1 className="py-3">EDUCATION & CERTIFICATIONS</h1>
-                <div>
-                    <h3 className="pb-3">IBM Full Stack Software Developer Professional Certificate - Completed January 2025</h3>
+        <div className="container">
+            <h1 className="m-3 p-3 text-center rebecca">EDUCATION & CERTIFICATIONS</h1>
+            <div className="lavender rebeccaBackground">
+                <div className="mx-5 p-3">
+                    <h3 className="py-3">IBM Full Stack Software Developer Professional Certificate - Completed January 2025</h3>
                     <p className="pb-3">Completed coursework covering front-end and back-end development, cloud computing, and DevOps.</p>
                     <h5 className="pb-3">Courses completed:</h5>
                     <ul>
@@ -22,9 +22,9 @@ export default function Education() {
                         <li>Full Stack Software Developer Assessment</li>
                     </ul>
                 </div>
-            </div>
-            <div className="row mx-5 px-3 pb-4">
-                <h3>Bachelor of Music Performance - University of Minnesota, Twin Cities</h3>
+                <div className="mx-5 px-3 pb-4">
+                    <h3>Bachelor of Music Performance - University of Minnesota, Twin Cities</h3>
+                </div>
             </div>
         </div>
     )

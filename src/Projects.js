@@ -71,7 +71,7 @@ function Projects() {
         // Returns each repository as a link that navigates to a detailed project page
         <div>
             <div className="container">
-                <h1 className="text-center p-3 m-3" id="projects-title">PROJECTS</h1>
+                <h1 className="text-center p-3 m-3 mt-0 rebecca">PROJECTS</h1>
                 <ul className="list-unstyled d-flex flex-wrap justify-content-center gap-3">
                     {projects.map((project) => {
                         const imageUrl = project.image
