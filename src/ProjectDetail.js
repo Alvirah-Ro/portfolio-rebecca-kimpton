@@ -82,38 +82,31 @@ function ProjectDetail() {
 
     return (
         <div className="container">
-            <div className="d-flex align-items-center justify-content-center m-3">
-            {/* Display images from project.json if available */}
-            {projectDetails && (
-                <>
-                    <img src={imageUrl} alt="Project Image 1 " className="img-fluid max-width-700" width="500px" />
-                </>
-            )}
-            </div>
-            <h1 className="mb-5 text-center">{projectDetails?.title}</h1>
+            <h1 className="m-3 p-3 text-center rebecca">{projectDetails?.title}</h1>
             <div className="grid border border-dark shadow p-3">
                 <div className="row pt-3">
-                <div className="col">
-                <p className="mb-4">{projectDetails?.longDescription1 || project.description || "No description available."}</p>
-                <p className="mb-4">{projectDetails?.longDescription2 || project.description || "No description available."}</p>
-                <p className="mb-4">{projectDetails?.longDescription3 || project.description || "No description available."}</p>            
-                <p className="mb-4">Last Updated: {new Date(project.updated_at).toLocaleDateString()}</p>
-                <a href={project?.html_url} target="_blank" rel="noopener noreferrer">View on GitHub</a>
+                    <div className="col-5">
+                        <p className="mb-4">{projectDetails?.longDescription1 || project.description || "No description available."}</p>
+                        <p className="mb-4">{projectDetails?.longDescription2 || project.description || "No description available."}</p>
+                        <p className="mb-4">{projectDetails?.longDescription3 || project.description || "No description available."}</p>
+                        <p className="mb-4">Last Updated: {new Date(project.updated_at).toLocaleDateString()}</p>
+                        <a href={project?.html_url} target="_blank" rel="noopener noreferrer">View on GitHub</a>
 
+                    </div>
+                    <div className="col-6">
+                        {/* Display images from project.json if available */}
+                        {projectDetails && (
+                            <>
+                                <img src={imageUrl} alt="Project Image 1" className="img-fluid max-width-500 mb-4" />
+                                <img src={imageUrl2} alt="Project Image 2" className="img-fluid max-width-500 mb-4" />
+                                <img src={imageUrl3} alt="Project Image 3" className="img-fluid max-width-500 mb-4" />
+                                <img src={imageUrl4} alt="Project Image 4" className="img-fluid max-width-500 mb-4" />
+                                <img src={imageUrl5} alt="Project Image 5" className="img-fluid max-width-500 mb-4" />
+                                <img src={imageUrl6} alt="Project Image 6" className="img-fluid max-width-500 mb-4" />
+                            </>
+                        )}
+                    </div>
                 </div>
-            <div className="col">
-                {/* Display images from project.json if available */}
-                {projectDetails && (
-                    <>
-                        <img src={imageUrl2} alt="Project Image 2" className="img-fluid max-width-500 mb-4" width="500px" />
-                        <img src={imageUrl3} alt="Project Image 3" className="img-fluid max-width-500 mb-4" width="500px" />
-                        <img src={imageUrl4} alt="Project Image 4" className="img-fluid max-width-500 mb-4" width="500px" />
-                        <img src={imageUrl5} alt="Project Image 5" className="img-fluid max-width-500 mb-4" width="500px" />
-                        <img src={imageUrl6} alt="Project Image 6" className="img-fluid max-width-500 mb-4" width="500px" />
-                    </>
-                )}
-            </div>
-            </div>
             </div>
         </div>
     );
