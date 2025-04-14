@@ -82,10 +82,12 @@ function ProjectDetail() {
 
     return (
         <div className="container">
-            <h1 className="m-3 p-3 text-center rebecca">{projectDetails?.title}</h1>
-            <div className="d-grid gap-3 border border-dark shadow p-3 m-3">
+            <h1 className="m-3 mb-2 p-3 text-center rebecca">{projectDetails?.title}</h1>
+            <a className="d-flex justify-content-center rebecca" href={project?.html_url} target="_blank" rel="noopener noreferrer">View on GitHub</a>
 
-                    <div className="row justify-content-evenly">
+            <div className="d-grid gap-3 border border-dark shadow py-3 m-3">
+
+                    <div className="row pt-4 justify-content-evenly">
                         {/* Display images from project.json if available */}
                         {projectDetails && (
                             <>
@@ -95,7 +97,7 @@ function ProjectDetail() {
                         <p className="col-5 mb-4 align-content-center">{projectDetails?.longDescription1 || project.description || "No description available."}</p>
                     </div>
 
-                    <div className="row justify-content-evenly">
+                    <div className="row py-1 justify-content-evenly">
                         <p className="col-5 mb-4 align-content-center">{projectDetails?.longDescription2 || project.description || "No description available."}</p>
                         {/* Display images from project.json if available */}
                         {projectDetails && (
@@ -105,7 +107,7 @@ function ProjectDetail() {
                         )}
                     </div>
 
-                    <div className="row justify-content-evenly">
+                    <div className="row py-1 justify-content-evenly">
                     {/* Display images from project.json if available */}
                         {projectDetails && (
                             <>
@@ -115,7 +117,7 @@ function ProjectDetail() {
                         <p className="col-5 mb-4 align-content-center">{projectDetails?.longDescription3 || project.description || "No description available."}</p>
                     </div>
 
-                    <div className="row justify-content-evenly">
+                    <div className="row py-1 justify-content-evenly">
                         {/* Display images from project.json if available */}
                         {projectDetails && (
                             <>
@@ -125,9 +127,7 @@ function ProjectDetail() {
                         )}
                     </div>
 
-                    <div className="row justify-content-evenly">
-                        <a className="col-1 align-content-center" href={project?.html_url} target="_blank" rel="noopener noreferrer">View on GitHub</a>
-
+                    <div className="row py-1 justify-content-evenly">
                         {/* Display images from project.json if available */}
                         {projectDetails && (
                             <>
