@@ -1,4 +1,3 @@
-//import Schuyler from './Schuyler.jpeg';
 import Intro from './Intro';
 import Projects from './Projects';
 

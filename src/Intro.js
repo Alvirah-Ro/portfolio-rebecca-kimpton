@@ -1,5 +1,3 @@
-//import Schuyler from './Schuyler.jpeg';
-
 export default function Intro() {
     return (
         <div className="container text-center">

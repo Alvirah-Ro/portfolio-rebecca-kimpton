@@ -85,54 +85,59 @@ function ProjectDetail() {
             <h1 className="m-3 mb-2 p-3 text-center rebecca">{projectDetails?.title}</h1>
             <a className="d-flex justify-content-center rebecca" href={project?.html_url} target="_blank" rel="noopener noreferrer">View on GitHub</a>
 
-            <div className="border border-dark shadow p-3 m-3">
-
-                    <div className="row gx-4">
+            <div className="d-grid border border-dark shadow py-3 my-4 mx-2">
+                
+                    {/* Row 1 */}
+                    <div className="row justify-content-center column-gap-5 m-0 mt-3">
                         {/* Display images from project.json if available */}
                         {projectDetails && (
                             <>
-                                <img src={imageUrl} alt="Project Image 1" className="col-6 border-success align-content-center img-fluid max-width-400 mb-4 p-0" />
+                                <img src={imageUrl} alt="Project Image 1" className="col-5 justify-content-center img-fluid max-width-400 mb-4 p-0" />
                             </>
                         )}
-                        <p className="col-6 mb-4 border border-success align-content-center">{projectDetails?.longDescription1 || project.description || "No description available."}</p>
+                        <p className="col-5 mb-4 align-content-center">{projectDetails?.longDescription1 || project.description || "No description available."}</p>
                     </div>
 
-                    <div className="row p-4">
-                        <p className="col-md-6 mb-4 align-content-center">{projectDetails?.longDescription2 || project.description || "No description available."}</p>
+                    {/* Row 2 */}
+                    <div className="row justify-content-center column-gap-5 m-0">
+                        <p className="col-5 mb-4 align-content-center">{projectDetails?.longDescription2 || project.description || "No description available."}</p>
                         {/* Display images from project.json if available */}
                         {projectDetails && (
                             <>
-                                <img src={imageUrl2} alt="Project Image 2" className="col-md-6 img-fluid max-width-400 mb-4 p-0" />
+                                <img src={imageUrl2} alt="Project Image 2" className="col-5 justify-content-center img-fluid max-width-400 mb-4 p-0" />
                             </>
                         )}
                     </div>
 
-                    <div className="row p-4">
+                    {/* Row 3 */}
+                    <div className="row justify-content-center column-gap-5 m-0">
                     {/* Display images from project.json if available */}
                         {projectDetails && (
                             <>
-                                <img src={imageUrl3} alt="Project Image 3" className="col-md-6 img-fluid max-width-400 mb-4 p-0" />
+                                <img src={imageUrl3} alt="Project Image 3" className="col-5 justify-content-center img-fluid max-width-400 mb-4 p-0" />
                             </>
                         )}
                         <p className="col-5 mb-4 align-content-center">{projectDetails?.longDescription3 || project.description || "No description available."}</p>
                     </div>
 
-                    <div className="row p-4">
-                    <p className="col-md-6 mb-4 align-content-center">{projectDetails?.longDescription4 || project.description || "No description available."}</p>
+                    {/* Row 4 */}
+                    <div className="row justify-content-center column-gap-5 m-0">
+                    <p className="col-5 mb-4 align-content-center">{projectDetails?.longDescription4 || project.description || "No description available."}</p>
                     {/* Display images from project.json if available */}
                         {projectDetails && (
                             <>
-                                <img src={imageUrl4} alt="Project Image 4" className="col-md-6 img-fluid max-width-400 mb-4 p-0" />
+                                <img src={imageUrl4} alt="Project Image 4" className="col-5 justify-content-center img-fluid max-width-400 mb-4 p-0" />
                             </>
                         )}
                     </div>
 
-                    <div className="row p-4">
+                    {/* Row 5 */}
+                    <div className="row justify-content-evenly m-0">
                         {/* Display images from project.json if available */}
                         {projectDetails && (
                             <>
-                                <img src={imageUrl5} alt="Project Image 5" className="col-md-6 img-fluid max-width-400 mb-4 mx-1 p-0" />
-                                <img src={imageUrl6} alt="Project Image 6" className="col-md-6 img-fluid max-width-400 mb-4 mx-1 p-0" />
+                                <img src={imageUrl5} alt="Project Image 5" className="col-6 justify-content-center img-fluid max-width-400 mb-4 mx-1 p-0" />
+                                <img src={imageUrl6} alt="Project Image 6" className="col-6 justify-content-center img-fluid max-width-400 mb-4 mx-1 p-0" />
                             </>
                         )}
                     </div>
