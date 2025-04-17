@@ -19,7 +19,7 @@
 }
 
 body {
-    background-color: lavender;
+    background-color: lavender !important;
 }
 
 #top {

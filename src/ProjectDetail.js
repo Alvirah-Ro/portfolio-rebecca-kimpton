@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import ImageModal from "./ImageModal";
 
 function ProjectDetail() {
     const { projectName } = useParams(); // Get project name from the URL
@@ -91,9 +92,9 @@ function ProjectDetail() {
                     <div className="row justify-content-center column-gap-5 m-0 mt-3">
                         {/* Display images from project.json if available */}
                         {projectDetails && (
-                            <>
-                                <img src={imageUrl} alt="Project Image 1" className="col-5 justify-content-center img-fluid max-width-400 mb-4 p-0" />
-                            </>
+                            <div className="col-5 justify-content-center">
+                                <ImageModal src={imageUrl} alt="Project Image 1" />
+                            </div>
                         )}
                         <p className="col-5 mb-4 align-content-center">{projectDetails?.longDescription1 || project.description || "No description available."}</p>
                     </div>
@@ -102,18 +103,18 @@ function ProjectDetail() {
                     <div className="row justify-content-center column-gap-5 m-0">
                         <p className="col-5 mb-4 align-content-center">{projectDetails?.longDescription2 || project.description || "No description available."}</p>
                         {projectDetails && (
-                            <>
-                                <img src={imageUrl2} alt="Project Image 2" className="col-5 justify-content-center img-fluid max-width-400 mb-4 p-0" />
-                            </>
+                            <div className="col-5 justify-content-center">
+                                <ImageModal src={imageUrl2} alt="Project Image 2" />
+                            </div>
                         )}
                     </div>
 
                     {/* Row 3 */}
                     <div className="row justify-content-center column-gap-5 m-0">
                         {projectDetails && (
-                            <>
-                                <img src={imageUrl3} alt="Project Image 3" className="col-5 justify-content-center img-fluid max-width-400 mb-4 p-0" />
-                            </>
+                            <div className="col-5 justify-content-center">
+                                <ImageModal src={imageUrl3} alt="Project Image 3" />
+                            </div>
                         )}
                         <p className="col-5 mb-4 align-content-center">{projectDetails?.longDescription3 || project.description || "No description available."}</p>
                     </div>
@@ -122,9 +123,9 @@ function ProjectDetail() {
                     <div className="row justify-content-center column-gap-5 m-0">
                     <p className="col-5 mb-4 align-content-center">{projectDetails?.longDescription4 || project.description || "No description available."}</p>
                         {projectDetails && (
-                            <>
-                                <img src={imageUrl4} alt="Project Image 4" className="col-5 justify-content-center img-fluid max-width-400 mb-4 p-0" />
-                            </>
+                            <div className="col-5 justify-content-center">
+                                <ImageModal src={imageUrl4} alt="Project Image 4" />
+                            </div>
                         )}
                     </div>
 
@@ -132,8 +133,8 @@ function ProjectDetail() {
                     <div className="row justify-content-evenly m-0">
                         {projectDetails && (
                             <>
-                                <img src={imageUrl5} alt="Project Image 5" className="col-6 justify-content-center img-fluid max-width-400 mb-4 mx-1 p-0" />
-                                <img src={imageUrl6} alt="Project Image 6" className="col-6 justify-content-center img-fluid max-width-400 mb-4 mx-1 p-0" />
+                                <ImageModal src={imageUrl5} alt="Project Image 5" className="col-5 justify-content-center img-fluid max-width-400 mb-4 mx-1 p-0" />
+                                <ImageModal src={imageUrl6} alt="Project Image 6" className="col-5 justify-content-center img-fluid max-width-400 mb-4 mx-1 p-0" />
                             </>
                         )}
                     </div>
