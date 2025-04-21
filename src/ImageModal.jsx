@@ -12,7 +12,11 @@ export default function ImageModal({ src, alt, className}) {
                 src={src}
                 alt={alt}
                 className={className || defaultClass}
-                style={{ cursor: 'pointer', maxHeight: '80vw', width: 'auto'}}
+                style={{ 
+                    cursor: 'pointer', 
+                    maxWidth: '34.2vw', 
+                    height: 'auto',
+                }}
                 onClick={() => setShow(true)}
             />
 

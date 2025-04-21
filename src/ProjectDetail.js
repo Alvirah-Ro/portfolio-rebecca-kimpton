@@ -86,10 +86,10 @@ function ProjectDetail() {
             <h1 className="m-3 mb-2 p-3 text-center rebecca">{projectDetails?.title}</h1>
             <a className="d-flex justify-content-center rebecca" href={project?.html_url} target="_blank" rel="noopener noreferrer">View on GitHub</a>
 
-            <div className="d-grid border border-dark shadow py-3 my-4 mx-2">
+            <div className="d-grid border border-dark shadow py-3 my-4 mx-2 gap-2">
                 
                     {/* Row 1 */}
-                    <div className="row justify-content-center column-gap-5 m-0 mt-3">
+                    <div className="row justify-content-center column-gap-5 m-0 mt-4">
                         {/* Display images from project.json if available */}
                         {projectDetails && (
                             <div className="col-5 justify-content-center">
@@ -130,11 +130,11 @@ function ProjectDetail() {
                     </div>
 
                     {/* Row 5 */}
-                    <div className="row justify-content-evenly m-0">
+                    <div className="row justify-content-evenly m-3">
                         {projectDetails && (
                             <>
-                                <ImageModal src={imageUrl5} alt="Project Image 5" className="col-5 justify-content-center img-fluid max-width-400 mb-4 mx-1 p-0" />
-                                <ImageModal src={imageUrl6} alt="Project Image 6" className="col-5 justify-content-center img-fluid max-width-400 mb-4 mx-1 p-0" />
+                                <ImageModal src={imageUrl5} alt="Project Image 5" className="col-5 justify-content-center img-fluid max-width-400 mb-3 mx-0 p-0" />
+                                <ImageModal src={imageUrl6} alt="Project Image 6" className="col-5 justify-content-center img-fluid max-width-400 mb-3 mx-1 p-0" />
                             </>
                         )}
                     </div>
