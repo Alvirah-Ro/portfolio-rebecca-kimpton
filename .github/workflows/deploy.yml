@@ -49,3 +49,12 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+fetch-repo-data:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch repo data using GitHub API
+        run: |
+            curl -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+              -H "Accept: application/vnd.github.v3+json" \
+              "https://api.github.com/repos/${{ github.repository_owner }}/${{ github.repository }}/contents/project.json"
