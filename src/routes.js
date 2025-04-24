@@ -5,7 +5,7 @@ import Resume from './Resume';
 const routes = [
     { path: "/", element: <Home /> },
     { path: "/projects/:projectName", element: <ProjectDetail /> }, // Dynamic route
-    { path: "/Resume", element: <Resume />}
+    { path: "/resume", element: <Resume />}
 ];
 
 export default routes;
