@@ -8,6 +8,7 @@ function Projects() {
             try {
                 //  Step 1: Fetch all starred repositories from Git Hub dynamically
                 const token = process.env.REACT_APP_GITHUB_TOKEN;
+                console.log(token);
                 const response = await fetch("https://api.github.com/users/Alvirah-Ro/starred", {
                     headers: {
                         Authorization: `Bearer ${token}`,
@@ -16,8 +17,11 @@ function Projects() {
                 });
 
                 const repos = await response.json();
-
-                console.log("Fetched repositories:", repos); // Debugging
+                if (Array.isArray(repos)) {
+                    console.log("Fetched repositories:", repos);
+                } else {
+                    console.error("Error fetching repositories:", repos);
+                }
 
                 // Step 2: Fetch `project.json` from each repo
                 const projectWithDetails = await Promise.all(

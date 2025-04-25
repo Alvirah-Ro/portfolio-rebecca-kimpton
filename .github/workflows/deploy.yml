@@ -28,7 +28,7 @@ jobs:
           node-version: 18
 
       - name: Set up GitHub token
-        run: echo "REACT_APP_GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}" >> $GITHUB_ENV
+        run: echo "REACT_APP_GITHUB_TOKEN=${{ secrets.REACT_APP_GITHUB_TOKEN }}" >> $GITHUB_ENV
 
       - name: Install dependencies
         run: npm ci
