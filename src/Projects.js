@@ -83,13 +83,16 @@ function Projects() {
                             : `${process.env.PUBLIC_URL}/images/default.jpg`; // Optional fallback image
                     
                         console.log(`Rendering Project: ${project.name}, Updated At: ${project.updated_at}`); // Logs project updating details to console
+                        
                         return (
                             <li key={project.id} className="border border-dark shadow p-3 h-100 max-width-300 min-height-400">
                                 <div className="d-flex flex-column align-items-center text-center min-height-400">
                                     <Link id="title" to={`/projects/${project.name}`}>
                                         <h5 className="p-2" id="title">{project.title || project.name}</h5>                                
-                                    </Link>   
-                                    <img src={imageUrl} alt={project.title} className="img-thumbnail my-2" style={{ height: "135px", objectFit: "cover" }}/>
+                                    </Link> 
+                                    <Link id="title" to={`/projects/${project.name}`}>
+                                        <img src={imageUrl} alt={project.title} className="img-thumbnail my-2" style={{ height: "135px", objectFit: "cover" }}/>
+                                    </Link> 
                                     <div className="my-3 mx-2 flex-grow-1 d-flex align-items-start">
                                         <p className="text-wrap">{project.description || "No description available."}</p>
                                     </div>
