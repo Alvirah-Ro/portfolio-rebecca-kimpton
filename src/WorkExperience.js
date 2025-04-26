@@ -6,9 +6,9 @@ export default function WorkExperience() {
                 <div className="mx-4">
                     <h5 className="py-3">Print Music Receiving and Sales - Groth Music, Bloomington, MN</h5>
                     <ul>
+                        <li>Created and integrated graphic design elements on the company website. </li>
                         <li>Managed print music receiving operations, increasing efficiency by 50% through improved organization and time management.</li>
                         <li>Maintained high accuracy in inventory processing, verifying product details and coordinating special orders.</li>
-                        <li>Ensured accurate financial records by reconciling invoices and purchase orders.</li>
                         <li>Maintained and updated company website product listings and descriptions.</li>
                     </ul>
 

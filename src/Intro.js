@@ -15,8 +15,7 @@ export default function Intro() {
                         Waterloo-Cedar Falls Symphony Orchestra.
                         I recently decided to change careers and embarked on my new journey to become a software developer.
                         Along the way, I earned an IBM certificate in full-stack software development.
-                        I am excited to use my artistic inclinations and creativity to design and develop attractive and
-                        functional apps and webpages.
+                        I am excited to use my creative, artistic inclinations to design and develop attractive, functional apps and webpages.
                 </div>
         </div>
     )
