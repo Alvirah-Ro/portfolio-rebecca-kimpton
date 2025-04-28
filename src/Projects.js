@@ -85,8 +85,8 @@ function Projects() {
                         console.log(`Rendering Project: ${project.name}, Updated At: ${project.updated_at}`); // Logs project updating details to console
                         
                         return (
-                            <li key={project.id} className="border border-dark shadow p-3 h-100 max-width-300 min-height-400">
-                                <div className="d-flex flex-column align-items-center text-center min-height-400">
+                            <li key={project.id} className="border border-dark shadow p-3 h-100 max-width-300 min-height-375">
+                                <div className="d-flex flex-column align-items-center text-center min-height-375">
                                     <Link id="title" to={`/projects/${project.name}`}>
                                         <h5 className="p-2" id="title">{project.title || project.name}</h5>                                
                                     </Link> 
@@ -98,7 +98,7 @@ function Projects() {
                                     </div>
                                     <div className="mt-auto text-secondary row align-items-end">
                                         {project.updated_at ? (
-                                            <p>Last Updated: {new Date(project.updated_at).toLocaleDateString()}</p>
+                                            <p className="mb-2">Last Updated: {new Date(project.updated_at).toLocaleDateString()}</p>
                                         ) : (
                                             <p style={{ color: "red" }}>No updated_at found</p>
                                         )}

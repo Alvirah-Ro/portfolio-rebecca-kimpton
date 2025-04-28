@@ -66,6 +66,10 @@ a:hover {
     width: 100%;
 }
 
+.min-height-375 {
+    min-height: 375px;
+}
+
 .min-height-400 {
     min-height: 400px;
 }

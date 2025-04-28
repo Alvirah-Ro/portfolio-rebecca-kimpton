@@ -1,6 +1,7 @@
 import Certifications from './Certifications';
 import WorkExperience from './WorkExperience';
 import Education from './Education';
+import Summary from './Summary';
 
 export default function Resume() {
     return (
@@ -8,6 +9,7 @@ export default function Resume() {
             <Certifications />
             <WorkExperience />
             <Education />
+            <Summary />
         </div>
     )
 }
