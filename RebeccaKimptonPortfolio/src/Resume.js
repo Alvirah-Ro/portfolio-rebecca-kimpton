@@ -7,11 +7,11 @@ import Summary from './Summary';
 export default function Resume() {
     return (
         <div>
+            <Summary />
             <TechnicalSkills />
             <Certifications />
             <WorkExperience />
             <Education />
-            <Summary />
         </div>
     )
 }
