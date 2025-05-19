@@ -2,10 +2,14 @@
 <html>
   <head>
     <meta charset="UTF-8" />
+    <title>Redirecting…</title>
     <script type="text/javascript">
-      sessionStorage.redirect = location.href;
-      window.location.href = "/";
+      var path = window.location.pathname;
+      // Adjust this to your repo name:
+      window.location.replace("/portfolio-rebecca-kimpton/index.html?redirect=" + path);
     </script>
   </head>
-  <body></body>
+  <body>
+    <p>Redirecting…</p>
+  </body>
 </html>
