@@ -18,6 +18,10 @@
     color: white;
 }
 
+.black {
+    color: black;
+}
+
 body {
     background-color: lavender !important;
 }
