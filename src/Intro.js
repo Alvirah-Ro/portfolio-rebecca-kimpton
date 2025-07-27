@@ -7,7 +7,7 @@ export default function Intro() {
                             and I'm excited to begin
                             a new career <br />
                             as a
-                            Web Developer!
+                            Software Developer!
                     </h3>
                 </div>
                 <div className="row mx-5 mt-4 mb-0 p-3">
