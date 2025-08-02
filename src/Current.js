@@ -10,7 +10,7 @@ export default function Current() {
                     </ul>
                     <h4 className="py-2">Express Book Reviews App</h4>
                     <ul>
-                        <li>I'm currently working on updating a former course project, an Express app using Node.js.  I am incorporating MongoDB as the database and adding extra functionality.  View on <a className= "white" href= "https://github.com/Alvirah-Ro/expressBookReviews">GitHub.</a></li>
+                        <li>I'm currently working on updating a former course project, an Express app using Node.js.  I am incorporating MongoDB as the database and adding extra functionality.  I have updated the login/logout logic and public user routes.  I am currently working on the routes for registered users which includes adding, updating, and deleting book reviews.  View on <a className= "white" href= "https://github.com/Alvirah-Ro/expressBookReviews">GitHub.</a></li>
                     </ul>
                 </div>
             </div>
