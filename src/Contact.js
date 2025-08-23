@@ -1,6 +1,6 @@
 export default function Contact() {
-    const username = "BajoranEH";
-    const domain = "hotmail.com";
+    const username = "rkimpton612";
+    const domain = "outlook.com";
     const email = `${username}@${domain}`;
 
     return (
