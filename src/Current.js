@@ -7,13 +7,13 @@ export default function Current() {
 
                     <h4 className="py-2">More Typescript</h4>
                     <ul>
-                        <li>September 17th: After completing the Angular tutorial, I am continuing some practice with typescript using an array of mock patient data.
+                        <li>September 17th: After completing the Angular tutorial, I am continuing some practice with typescript using an array of mock patient data. </li>
                             View on <a href="https://github.com/Alvirah-Ro/PatientsApp" className="white">GitHub</a>
-                        </li>
                     </ul>
 
                     <h4 className="py-2">Angular</h4>
                     <ul>
+                        <li>September 26th: I have completed the official tutorial and am now editing and enhancing the app on my own.  Today I worked on adding validations and a success message to the form submission in the details component. </li>
                         <li>August 29th: I'm currently building an Angular application, an app to find rental homes, through the official tutorial in my local development environment.  </li>
                             View on <a href="https://github.com/Alvirah-Ro/HomesApp" className="white">GitHub</a>
                     </ul>
