@@ -1,21 +1,16 @@
 import Convert from './Convert';
 import CurrencyDropdown from './CurrencyDropdown';
+import Discount from './Discount';
 import { useState } from 'react';
 
 export default function Invoice() {
     const [amount, setAmount] = useState("");
     const [fromCurrency, setFromCurrency] = useState("EUR");
     const [toCurrency, setToCurrency] = useState("USD");
-    const [showResult, setShowResult] = useState(false);
-
-    const handleConvert = (e) => {
-        e.preventDefault();
-        setShowResult(true);
-    };
 
     return (
         <div className="container">
-            <form onSubmit={handleConvert}>
+            <form>
                 <h1 className="m-3 p-3 text-center rebecca">Currency Conversions for Invoices</h1>
                 <div className="container-md mx-4 p-4 lavender rebeccaBackground">
                     <div className="d-flex align-items-center flex-wrap gap-2">
@@ -31,7 +26,7 @@ export default function Invoice() {
                             value={toCurrency}
                             onChange={(e) => setToCurrency(e.target.value)}
                         />
-                                                <label htmlFor="amount">Amount:</label>
+                        <label htmlFor="amount">Amount:</label>
                         <div className="input-group">
                         <input className="form-control"
                             type="number"
@@ -41,20 +36,13 @@ export default function Invoice() {
                             onChange={(e) => setAmount(e.target.value)}
                         />
                         </div>
-
-                        <button type="submit" 
-                                className="btn btn-info mt-3">
-                            Convert
-                        </button>
                     </div>
                 </div>
             </form>
             <div className="container mt-5">
                 <h1>Currency Conversion</h1>
                 <p>Converting {amount} {fromCurrency} to {toCurrency}.</p>
-                {showResult && (
                     <Convert from={fromCurrency} to={toCurrency} amount={amount} />
-                )}
             </div>
         </div>
     );
