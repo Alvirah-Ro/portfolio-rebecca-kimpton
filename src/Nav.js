@@ -16,7 +16,7 @@ export default function Nav() {
                         <div className="navbar-nav">
                             <Link  className="nav-link" to="/">Home</Link>
                             <Link  className="nav-link" to="/resume">Resume</Link>
-                            {/* <Link  class ="nav-link" to="/conversion">Conversion Page</Link> */}
+                            <Link className="nav-link" to="/conversion">Conversion Page</Link>
                         </div>
                     </div>
                 </div>
