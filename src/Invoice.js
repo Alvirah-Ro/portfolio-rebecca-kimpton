@@ -60,7 +60,7 @@ export default function Invoice() {
                                 : ""
                                 }
                             </h2>
-                            <h5 className="py-1">Converting {discountedAmount} {fromCurrency} to {toCurrency}.</h5>
+                            <h5 className="py-1">Converting {discountedAmount.toFixed(2)} {fromCurrency} to {toCurrency}.</h5>
                             <Convert from={fromCurrency} to={toCurrency} amount={discountedAmount} />
 
                         </div>

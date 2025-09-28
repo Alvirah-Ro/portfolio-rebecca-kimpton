@@ -34,7 +34,7 @@ export default function Convert({ from, to, amount }) {
                 {errorMsg
                     ? errorMsg
                     : convertedAmount
-                        ? `${amount} ${from} is approximately ${convertedAmount} ${to}`
+                        ? `${amount.toFixed(2)} ${from} is approximately ${convertedAmount} ${to}`
                         : "Enter values to see conversions"}
             </h2>
         </div>
