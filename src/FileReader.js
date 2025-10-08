@@ -1,8 +1,7 @@
 import { useState } from "react";
 import * as pdfjsLib from "pdfjs-dist/build/pdf";
-import pdfjsWorker from "pdfjs-dist/build/pdf.worker.entry";
 
-pdfjsLib.GlobalWorkerOptions.workerSrc = pdfjsWorker;
+pdfjsLib.GlobalWorkerOptions.workerSrc = false;
 
 async function extractTableFromPDF(file) {
     const arrayBuffer = await file.arrayBuffer();
@@ -20,7 +19,7 @@ async function extractTableFromPDF(file) {
     const lines = fullText.split("\n");
     for (const line of lines) {
         const match = line.match(
-            /Edition\s*#\s*([A-Za-z0-9\/\-]+).*Title\s*(.+?).*Order\s*(\d+).*Ship\s*(\d+).*List\s*(\d+\.\d{2}).*Disc\s*(\d+%).*Net\s*(\d+\.\d{2}).*Extension\s*(\d+\.\d{2})/i
+            /Edition\s*#\s*([A-Za-z0-9/-]+).*Title\s*(.+?).*Order\s*(\d+).*Ship\s*(\d+).*List\s*(\d+\.\d{2}).*Disc\s*(\d+%).*Net\s*(\d+\.\d{2}).*Extension\s*(\d+\.\d{2})/i
         );
         if (match) {
             tableRows.push({
@@ -35,6 +34,25 @@ async function extractTableFromPDF(file) {
             });
         }
     }
-
+    console.log(tableRows);
     return tableRows;
+}
+
+export default function ExtractTableComponent() {
+  const [tableData, setTableData] = useState([]);
+
+  const handleFileChange = async (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      const data = await extractTableFromPDF(file);
+      setTableData(data);
+    }
+  };
+
+  return (
+    <div>
+      <input type="file" accept="application/pdf" onChange={handleFileChange} />
+      <pre>{JSON.stringify(tableData, null, 2)}</pre>
+    </div>
+  );
 }

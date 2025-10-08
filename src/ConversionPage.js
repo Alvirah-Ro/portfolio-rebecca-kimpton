@@ -1,5 +1,6 @@
 import Invoice from "./Invoice";
 import ConversionExplanation from "./ConversionExplanation";
+import ExtractTableComponent from "./FileReader";
 
 export default function ConversionPage() {
     
@@ -7,6 +8,7 @@ export default function ConversionPage() {
         <div>
             <Invoice />
             <ConversionExplanation />
+            <ExtractTableComponent />
         </div>
     );
 }
