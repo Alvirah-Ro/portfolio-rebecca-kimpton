@@ -31,7 +31,7 @@ export default function Invoice() {
                             value={toCurrency}
                             onChange={(e) => setToCurrency(e.target.value)}
                         />
-                        <label htmlFor="amount">Amount:</label>
+                        <label htmlFor="amount">Amount in {fromCurrency}:</label>
                         <div className="input-group">
                             <input className="form-control"
                                 type="number"
