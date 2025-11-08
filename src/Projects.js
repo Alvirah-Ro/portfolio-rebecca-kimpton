@@ -86,7 +86,7 @@ function Projects() {
                         
                         return (
                             <li key={project.id} className="border border-dark shadow p-3 h-100 max-width-300 min-height-400">
-                                <div className="d-flex flex-column align-items-center text-center min-height-375">
+                                <div className="d-flex flex-column align-items-center text-center min-height-400">
                                     <Link id="title" to={`/projects/${project.name}`}>
                                         <h5 className="p-2" id="title">{project.title || project.name}</h5>                                
                                     </Link> 
@@ -96,6 +96,9 @@ function Projects() {
                                     <div className="my-3 mx-2 flex-grow-1 d-flex align-items-start">
                                         <p className="text-wrap">{project.description || "No description available."}</p>
                                     </div>
+                                    {project.link && (
+                                        <a href={project.link} target="_blank" rel="noopener noreferrer"/>
+                                    )}
                                     <div className="mt-auto text-secondary row align-items-end">
                                         {project.updated_at ? (
                                             <p className="mb-2">Last Updated: {new Date(project.updated_at).toLocaleDateString()}</p>
