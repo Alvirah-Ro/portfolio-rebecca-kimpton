@@ -29,6 +29,8 @@ function ProjectDetail() {
                 const jsonUrls = [
                     `https://raw.githubusercontent.com/Alvirah-Ro/${projectName}/main/project.json`,  // Root directory
                     `https://raw.githubusercontent.com/Alvirah-Ro/${projectName}/main/${projectName}/project.json`, // Inside a subdirectory
+                    `https://raw.githubusercontent.com/Alvirah-Ro/${repo.name}/main/.streamlit/project.json`, // Inside a streamlit subdirectory
+
                 ];
 
                 for (const url of jsonUrls) {
