@@ -86,7 +86,7 @@ function Projects() {
                         
                         return (
                             <li key={project.id} className="border border-dark shadow p-3 h-100 max-width-300 min-height-400">
-                                <div className="d-flex flex-column align-items-center text-center min-height-375">
+                                <div className="d-flex flex-column align-items-center text-center min-height-400">
                                     <Link id="title" to={`/projects/${project.name}`}>
                                         <h5 className="p-2" id="title">{project.title || project.name}</h5>                                
                                     </Link> 
