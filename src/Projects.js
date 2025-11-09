@@ -84,7 +84,7 @@ function Projects() {
                             ? `${process.env.PUBLIC_URL}/images/${project.image}`
                             : `${process.env.PUBLIC_URL}/images/default.jpg`; // Optional fallback image
                     
-                        console.log(`Rendering Project: ${project.name}, Updated At: ${project.updated_at}`); // Logs project updating details to console
+                        console.log(`Rendering Project: ${project.name}, Updated At: ${project.updated_at}, Link: ${project.link || 'No link found'}`); // Logs project updating details to console
                         
                         return (
                             <li key={project.id} className="border border-dark shadow p-3 h-100 max-width-300 min-height-400">
