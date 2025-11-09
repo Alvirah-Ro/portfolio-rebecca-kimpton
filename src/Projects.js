@@ -57,7 +57,9 @@ function Projects() {
                 ); // <-- Closing `Promise.all()`
 
             // Step 3: Filter out any null results            
-            const filteredProjects = projectWithDetails.filter(Boolean);
+            const filteredProjects = projectWithDetails
+                .filter(Boolean)
+                .sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at)); // Sort by most recently updated
             console.log("Final Projects State:", filteredProjects); // Logs what will be stored in `projects`
             setProjects(filteredProjects);
             } catch (error) {

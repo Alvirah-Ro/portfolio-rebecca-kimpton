@@ -132,10 +132,14 @@ function ProjectDetail() {
 
                     {/* Row 5 */}
                     <div className="row justify-content-evenly m-3">
-                        {projectDetails && (
+                        {projectDetails && (projectDetails.image5 || projectDetails.image6) && (
                             <>
+                            {projectDetails.image5 && (
                                 <ImageModal src={imageUrl5} alt="Project Image 5" className="col-5 justify-content-center img-fluid max-width-400 mb-3 mx-0 p-0" />
+                            )}
+                            {projectDetails.image6 && (
                                 <ImageModal src={imageUrl6} alt="Project Image 6" className="col-5 justify-content-center img-fluid max-width-400 mb-3 mx-1 p-0" />
+                            )}
                             </>
                         )}
                     </div>
