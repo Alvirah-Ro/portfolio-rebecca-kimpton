@@ -98,6 +98,9 @@ function Projects() {
                                     <div className="my-3 mx-2 flex-grow-1 d-flex align-items-start">
                                         <p className="text-wrap">{project.description || "No description available."}</p>
                                     </div>
+                                    {project.link && (
+                                        <a className="rebecca pt-n4 mb-4" href={project.link} target="_blank" rel="noopener noreferrer">View App Here</a>
+                                    )}
                                     <div className="mt-auto text-secondary row align-items-end">
                                         {project.updated_at ? (
                                             <p className="mb-2">Last Updated: {new Date(project.updated_at).toLocaleDateString()}</p>
