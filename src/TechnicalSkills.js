@@ -5,7 +5,7 @@ export default function TechnicalSkills() {
             <div className="mx-4 p-4 lavender rebeccaBackground">
                 <ul className="mx-4 mb-1">
                     <li>Programming Languages: Python, JavaScript, Typescript, SQL</li>
-                    <li>Web Development: HTML, CSS, React, Node.js, Express.js, Angular, Django</li>
+                    <li>Web Development: HTML, CSS, React, Node.js, Express.js, Angular, Django, Streamlit</li>
                     <li>Databases: PostgreSQL, SQLite, MongoDB</li>
                     <li>Cloud & DevOps: Docker, Kubernetes, OpenShift</li>
                     <li>Version Control: Git, GitHub</li>
