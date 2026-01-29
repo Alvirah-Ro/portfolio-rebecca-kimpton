@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 
 export default function Current() {
@@ -8,11 +8,11 @@ export default function Current() {
             <div className="mx-4 p-4 lavender rebeccaBackground">
                 <div className="mx-4">
 
-                    <h4 className="py-2">Conversion Page</h4>
+                    {/* <h4 className="py-2">Conversion Page</h4>
                     <ul>
                         <li>September 28th: I've created a conversion page on this site to help me streamline calculations when reviewing invoices at work.</li>
                             Check out the top nav link or view the page <Link to="/conversion" className="white">here</Link>.
-                    </ul>
+                    </ul> */}
 
                     <h4 className="py-2">More Typescript</h4>
                     <ul>
