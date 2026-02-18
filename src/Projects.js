@@ -1,76 +1,32 @@
+import { fetchStarredReposWithDetails } from "./Api";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 function Projects() {
     const [projects, setProjects] = useState([]);
+    const [error, setError] = useState(null);
+    const [loading, setLoading] = useState(true);
 
-        async function fetchStarredRepos() {
+
+    // ✅ Fetch starred repos once when the component mounts
+    useEffect(() => {
+        const token = process.env.REACT_APP_GITHUB_TOKEN;
+        async function load() {
+            setLoading(true);
             try {
-                //  Step 1: Fetch all starred repositories from Git Hub dynamically
-                const token = process.env.REACT_APP_GITHUB_TOKEN;
-                const response = await fetch("https://api.github.com/users/Alvirah-Ro/starred", {
-                    headers: {
-                        Authorization: `Bearer ${token}`,
-                        Accept: "application/vnd.github.v3+json"
-                    }
-                });
-
-                const repos = await response.json();
-                if (Array.isArray(repos)) {
-                    console.log("Fetched repositories:", repos);
-                } else {
-                    console.error("Error fetching repositories:", repos);
-                }
-
-                // Step 2: Fetch `project.json` from each repo
-                const projectWithDetails = await Promise.all(
-                    repos.map(async (repo) => {
-                        // Fetch full repo details
-                        const repoDetailsResponse = await fetch(`https://api.github.com/repos/Alvirah-Ro/${repo.name}`);
-                        const repoDetails = await repoDetailsResponse.json();
-
-                        const jsonUrls = [
-                            `https://raw.githubusercontent.com/Alvirah-Ro/${repo.name}/main/project.json`,  // Root directory
-                            `https://raw.githubusercontent.com/Alvirah-Ro/${repo.name}/main/${repo.name}/project.json`, // Inside a subdirectory
-                            `https://raw.githubusercontent.com/Alvirah-Ro/${repo.name}/main/.streamlit/project.json`, // Inside a streamlit subdirectory
-                        ];
-
-                        for (const url of jsonUrls) {
-                            try {
-                                const jsonResponse = await fetch(url);
-                                if (jsonResponse.ok) {
-                                    const projectData = await jsonResponse.json();
-                                    return { 
-                                        ...repoDetails, // GitHub metadata
-                                        ...projectData, // Project.json data
-                                        updated_at: repo.updated_at // Ensure pushed_at is included
-                                    }; // Merge repo and project.json data
-                                }
-                            } catch (error) {
-                                console.warn(`Failed to fetch from ${url}:`, error);
-                            }
-                        } // <-- Closing `for` loop
-
-                        console.warn(`Skipping ${repo.name}: project.json not found in both locations`);
-                        return null; // Skip repos without project.json
-                    }) // <-- Closing `.map()`
-                ); // <-- Closing `Promise.all()`
-
-            // Step 3: Filter out any null results            
-            const filteredProjects = projectWithDetails
-                .filter(Boolean)
-                .sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at)); // Sort by most recently updated
-            console.log("Final Projects State:", filteredProjects); // Logs what will be stored in `projects`
-            setProjects(filteredProjects);
-            } catch (error) {
-                console.error("Error fetching starred repos:", error);
+                const results = await fetchStarredReposWithDetails("Alvirah-Ro", { token });
+                setProjects(results);
+            } catch (err) {
+                setError(err.message);
+            } finally {
+                setLoading(false);
             }
-        };
+        }
+        load();
+    }, []); 
 
-        // ✅ Fetch starred repos once when the component mounts
-        useEffect(() => {
-            fetchStarredRepos();
-        }, []); 
+    if (error) return <h2>Error: {error}</h2>;
+    if (loading) return <h2>Loading...</h2>;
 
 
     return (
