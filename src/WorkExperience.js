@@ -5,7 +5,7 @@ export default function WorkExperience() {
             <div className="mx-4 p-4 lavender rebeccaBackground">
                 <div className="mx-4">
                     <h5 className="pt-3 mb-1">Print Music Receiving and Sales - Groth Music, Bloomington, MN</h5>
-                    <div className="pt-0 pb-3 mb-1">2014-Present</div>
+                    <div className="pt-0 pb-3 mb-1">2014-2026</div>
                     <ul>
                         <li>Created and integrated graphic design elements on the company website. </li>
                         <li>Managed print music receiving operations, increasing efficiency by 50% through improved organization and time management.</li>
@@ -14,7 +14,7 @@ export default function WorkExperience() {
                     </ul>
 
                     <h5 className="pt-3 mb-1">Private Piano Instructor - Minneapolis/Bloomington, MN</h5>
-                    <div className="pt-0 pb-3 mb-1">2014-Present</div>
+                    <div className="pt-0 pb-3 mb-1">2014-2025</div>
                     <ul>
                         <li>Taught one-on-one piano lessons to students of various ages, who often started as complete beginners. </li>
                         <li>Helped students progress by improving their note and rhythm reading, piano technique, and knowledge of theory and other music fundamentals.</li>
