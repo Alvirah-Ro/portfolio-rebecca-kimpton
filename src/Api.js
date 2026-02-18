@@ -58,4 +58,5 @@ export async function fetchStarredReposWithDetails(owner = DEFAULT_OWNER, { toke
     return results.filter(Boolean).sort((a,b)=>new Date(b.updated_at)-new Date(a.updated_at));
 }
 
-export default { fetchRepoWithProjectDetails, fetchStarredReposWithDetails };
+const api = { fetchRepoWithProjectDetails, fetchStarredReposWithDetails };
+export default api;
