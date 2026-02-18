@@ -65,19 +65,19 @@ function ProjectDetail() {
         ? `${process.env.PUBLIC_URL}/images/${projectDetails.image2}`
         : `${process.env.PUBLIC_URL}/images/default.jpg`; // Optional fallback image
 
-    const imageUrl3 = projectDetails?.image2
+    const imageUrl3 = projectDetails?.image3
         ? `${process.env.PUBLIC_URL}/images/${projectDetails.image3}`
         : `${process.env.PUBLIC_URL}/images/default.jpg`; // Optional fallback image
 
-    const imageUrl4 = projectDetails?.image2
+    const imageUrl4 = projectDetails?.image4
         ? `${process.env.PUBLIC_URL}/images/${projectDetails.image4}`
         : `${process.env.PUBLIC_URL}/images/default.jpg`; // Optional fallback image
 
-    const imageUrl5 = projectDetails?.image2
+    const imageUrl5 = projectDetails?.image5
         ? `${process.env.PUBLIC_URL}/images/${projectDetails.image5}`
         : `${process.env.PUBLIC_URL}/images/default.jpg`; // Optional fallback image
 
-    const imageUrl6 = projectDetails?.image2
+    const imageUrl6 = projectDetails?.image6
         ? `${process.env.PUBLIC_URL}/images/${projectDetails.image6}`
         : `${process.env.PUBLIC_URL}/images/default.jpg`; // Optional fallback image
 
