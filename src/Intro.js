@@ -4,8 +4,8 @@ export default function Intro() {
                 <div className="row mt-5 mx-5 p-3 lavender rebeccaBackground">
                     <h3 className="lh-base m-0">
                             Hi, I'm Rebecca.<br />
-                            I'm an administrative and operations professional <br />
-                            with technical training in web development.<br />
+                            {/* I'm an administrative and operations professional <br /> */}
+                            {/* with technical training in web development.<br /> */}
                     </h3>
                 </div>
                 <div className="row mx-5 mt-4 mb-0 p-3">
