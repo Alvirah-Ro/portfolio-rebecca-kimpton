@@ -3,7 +3,7 @@ export default function Intro() {
         <div className="container text-center">
                 <div className="row mt-5 mx-5 p-3 lavender rebeccaBackground">
                     <h3 className="lh-base m-0">
-                            Hi, I'm Rebecca.<br />
+                            Hi, I'm Rebecca, and I work for the University of Minnesota.<br />
                             {/* I'm an administrative and operations professional <br /> */}
                             {/* with technical training in web development.<br /> */}
                     </h3>
